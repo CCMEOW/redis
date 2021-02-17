@@ -4,7 +4,7 @@
 
 ## Chapter I
 * [原理](原理/summary.md)
-    * [数据结构](原理/数据结构.md)
+    * [数据结构](原理/数据结构/数据结构.md)
         * [简单动态字符串SDS](原理/数据结构/简单动态字符串SDS.md)
         * [链表](原理/数据结构/链表.md)
         * [字典](原理/数据结构/字典.md)
@@ -19,7 +19,13 @@
         * [AOF](原理/持久化/aof.md)
     * [高并发与主从复制](原理/高并发与主从复制.md)
     * [Sentinel哨兵](原理/sentinel.md)
+    * [集群](原理/集群/集群.md)
+        * [数据分布算法](原理/集群/数据分布算法.md)
+            * [一致性hash](原理/集群/一致性hash.md)
+            * [hash slot](原理/集群/hash_slot.md)
 * [应用](应用/summary.md)
+    * [缓存穿透与缓存雪崩](应用/缓存穿透与缓存雪崩.md)
+    * [Cache Aside Pattern](应用/cache_aside_pattern.md)
 * [分布式一致性](分布式一致性/summary.md)
     * [Paxos协议](分布式一致性/paxos.md)
     * [Raft协议](分布式一致性/raft.md)
