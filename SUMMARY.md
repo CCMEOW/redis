@@ -26,6 +26,7 @@
 * [应用](应用/summary.md)
     * [缓存穿透与缓存雪崩](应用/缓存穿透与缓存雪崩.md)
     * [Cache Aside Pattern](应用/cache_aside_pattern.md)
+    * [分布式锁](应用/分布式锁.md)
 * [分布式一致性](分布式一致性/summary.md)
     * [Paxos协议](分布式一致性/paxos.md)
     * [Raft协议](分布式一致性/raft.md)
