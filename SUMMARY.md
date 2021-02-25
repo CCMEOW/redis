@@ -30,4 +30,5 @@
 * [分布式一致性](分布式一致性/summary.md)
     * [Paxos协议](分布式一致性/paxos.md)
     * [Raft协议](分布式一致性/raft.md)
+    * [Redis和Raft对比](分布式一致性/redis_vs_raft.md)
 

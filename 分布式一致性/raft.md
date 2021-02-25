@@ -22,12 +22,12 @@ candidate: 成为领导的候选人，如果follower一段时间接受不到lead
     如果follower超时没有接收到来自leader的消息，则认为leader已无效，则将自己变更为candidate去竞争leader。
     
 2. leader选举  
-    a. follower超时未接收到来自leader的消息(或是第一次选举leader)
-    b. follower认为leader已无效(或是第一次选举leader)，变更自身为candidate(注意可能有**一个或多个**follower变为candidate)
-    c. candidate向其他节点发送消息，同时开启倒计时
-    d. 其他节点(candidate或follower)收到消息，认可新leader，发送回复
-    e. candidate收到回复，新leader选举出来，leader定期发送心跳消息证明自己仍然存活
-    f. 若candidate超时未收到其他节点的回复，则重新开启一轮投票
+    a. follower超时未接收到来自leader的消息(或是第一次选举leader)  
+    b. follower认为leader已无效(或是第一次选举leader)，变更自身为candidate(注意可能有**一个或多个**follower变为candidate)  
+    c. candidate向其他节点发送消息，同时开启倒计时  
+    d. 其他节点(candidate或follower)收到消息，根据策略[^1]决定是否认可新leader，发送回复  
+    e. candidate收到回复，新leader选举出来，leader定期发送心跳消息证明自己仍然存活  
+    f. 若candidate超时未收到其他节点的回复，则重新开启一轮投票  
     
 3. 网络分区与恢复
     a. 假设有五个节点a b c d e，a是leader，这时候的多数节点为3  
@@ -36,4 +36,6 @@ candidate: 成为领导的候选人，如果follower一段时间接受不到lead
     d. 同时，c超时未收到a的消息，变更为candidate，向其他节点发送提案  
     e. 节点d e同意c成为leader  
     f. 节点c d e可以正常运行，term增大  
-    g. 网络分区恢复后，由于c的term比a大，a b认可c为新leader，从c那里同步新的数据
+    g. 网络分区恢复后，由于c的term比a大，a b认可c为新leader，从c那里同步新的数据  
+    
+[^1]: Leader Election策略，如最简单的，先到先得，投票给自己第一个收到的，或者投票给数据比自己新的，等。
